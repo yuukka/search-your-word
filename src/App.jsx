@@ -117,10 +117,10 @@ const App = () => {
 
     <div className="main-content">
       <video autoPlay muted loop id="studyDesk">
-          <source src={videoSource} type="video/mp4"/>
+          <source src={videoSource} />
           Your browser
       </video>
-        <h1>えいやく<br />じしょ</h1>
+        <h1>えいやくじしょ</h1>
 
         <NavBar></NavBar>
         <FavContext.Provider value={{ setFavWord, requestType }}>

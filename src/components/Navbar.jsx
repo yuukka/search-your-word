@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { Center, Square, Circle } from '@chakra-ui/react'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,33 +10,21 @@ import {
 const NavBar = () => {
     return (
         <>
-            {/* <nav>
-                <ul>
-                    <li>
-                        <Link to='/' >Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/favlist' >Favlist</Link>
-                    </li>
-                    <li>
-                        <Link to='/quiz' >Quiz</Link>
-                    </li>
-                </ul>
-            </nav> */}
+        <Center>
+          <Breadcrumb>
+            <BreadcrumbItem >
+              <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
 
-<Breadcrumb>
-  <BreadcrumbItem >
-    <BreadcrumbLink href='/'>Home</BreadcrumbLink>
-  </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href='/favlist'>Favlist</BreadcrumbLink>
+            </BreadcrumbItem>
 
-  <BreadcrumbItem>
-    <BreadcrumbLink href='/favlist'>Favlist</BreadcrumbLink>
-  </BreadcrumbItem>
-
-  <BreadcrumbItem >
-    <BreadcrumbLink href='/quiz'>Quiz</BreadcrumbLink>
-  </BreadcrumbItem>
-</Breadcrumb>
+            <BreadcrumbItem >
+              <BreadcrumbLink href='/quiz'>Quiz</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </Center>
         </>
 
 
