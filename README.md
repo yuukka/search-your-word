@@ -1,6 +1,3 @@
-# Coming Soon..
-https://search-your-word.onrender.com/
-
 # <img src="./src/assets/readme_material/book.png" alt="book" style="vertical-align: middle; width: 25px;"/> Search Your Word ~ Japanese-English Ver~ (with Quiz) <img src="./src/assets/readme_material/shine.png" alt="shine" style="vertical-align: middle; width: 25px;"/>
 
 ## Introduction
