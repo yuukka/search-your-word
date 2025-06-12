@@ -3,7 +3,6 @@ import { Center, Square, Circle } from '@chakra-ui/react'
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@chakra-ui/react'
 
@@ -13,15 +12,15 @@ const NavBar = () => {
         <Center>
           <Breadcrumb>
             <BreadcrumbItem >
-              <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+              <Link to='/'>Home</Link>
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-              <BreadcrumbLink href='/favlist'>Favlist</BreadcrumbLink>
+              <Link to='/favlist'>Favlist</Link>
             </BreadcrumbItem>
 
             <BreadcrumbItem >
-              <BreadcrumbLink href='/quiz'>Quiz</BreadcrumbLink>
+              <Link to='/quiz'>Quiz</Link>
             </BreadcrumbItem>
           </Breadcrumb>
         </Center>
