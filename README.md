@@ -1,14 +1,16 @@
 # Coming Soon..
 https://search-your-word.onrender.com/
 
-# <img src="./assets/readme_material/" alt="dictionary" style="vertical-align: middle; width: 25px;"/> Search Your Word ~ Japanese-English Ver~ (with Quiz) <img src="./media/readme_material/study.png" alt="study" style="vertical-align: middle; width: 25px;"/>
+# <img src="./src/assets/readme_material/book.png" alt="book" style="vertical-align: middle; width: 25px;"/> Search Your Word ~ Japanese-English Ver~ (with Quiz) <img src="./src/assets/readme_material/shine.png" alt="shine" style="vertical-align: middle; width: 25px;"/>
 
 ## Introduction
-This is a React based Japanese-English Dictionary (with Quiz), designed to support Japanese language learner and/or English language learner with quick, easier and fun way to support thier learning journey.
-Same as the first project ([Guess the Word Game (Japanese Language Ver.)]:https://github.com/yuukka/guess-the-word-game) that I launched, the inspiration for creating this game came from my desire to help my son — who is primarily educated in English — to be able to search for words with fun GIF images to visulize to meaning of it.
+This is a React-based Japanese-English Dictionary with a built-in quiz feature, designed to support both Japanese and English language learners. The goal is to make the learning journey quicker, easier, and more enjoyable.
 
+Like my first project - [Guess the Word Game (Japanese Language Ver.)] - this app was inspired by my desire to support my son, who is primarily educated in English. I wanted to create a fun way for him to look up words and visualize their meanings through engaging GIFs.
 
-<img src="./media/readme_material/point.png" alt="point" style="vertical-align: middle; width: 15px;"/> [Click Here To Start!]
+[Guess the Word Game (Japanese Language Ver.)]:https://github.com/yuukka/guess-the-word-game
+
+<img src="./src/assets/readme_material/point.png" alt="point" style="vertical-align: middle; width: 15px;"/> [Click Here To Start!]
 
 [Click Here To Start!]: https://search-your-word.onrender.com
 
@@ -20,7 +22,7 @@ Same as the first project ([Guess the Word Game (Japanese Language Ver.)]:https:
 
 ### Search Result 
 <img src="./src/assets/readme_material/search_result_page1.png" alt="search_result_page1" style="vertical-align: middle; width: 300px;"/> 
-<img src="./src/assets/readme_material/search_result_page2.png" alt="search_result_page2" style="vertical-align: middle; width: 300px;"/> 
+
 
 ### Saved Words (/Favlist)
 <img src="./src/assets/readme_material/favlist_page1.png" alt="favlist_page1" style="vertical-align: middle; width: 300px;"/> 
@@ -49,9 +51,8 @@ Same as the first project ([Guess the Word Game (Japanese Language Ver.)]:https:
 * **[Jotaba]**
 
 **Image Resources:** 
-* **[Kaggle]**
-* **[Adobe Stock]**
-* **[Figma]**
+* **Adobe Stock**
+* **Figma**
 
 
 
