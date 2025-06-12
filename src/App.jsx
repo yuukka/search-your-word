@@ -116,7 +116,7 @@ const App = () => {
     <>
 
     <div className="main-content">
-      <video autoPlay muted loop pointer-events="none" id="studyDesk">
+      <video autoPlay muted loop pointer-events="none" touch-action= "none" id="studyDesk">
           <source src={videoSource} />
           Your browser
       </video>
