@@ -1,3 +1,5 @@
+// src/components/form.jsx
+
 import React, { useState, useEffect } from "react";
 import { Textarea, Input, Popover, PopoverTrigger,PopoverContent,PopoverArrow, PopoverCloseButton, FormControl, FormLabel,  IconButton, Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button, Image, Text, useDisclosure, Collapse, Box } from '@chakra-ui/react'
 import Favcard from './Favcard'
@@ -6,49 +8,31 @@ import PopoverForm from './PopoverForm'
 import { airTableAPI } from '../api/airTable'
 
 
-    
-
-
-    //https://v2.chakra-ui.com/docs/components/popover/usage
-    // const TextInput = React.forwardRef((props, ref) => {
-    // return (
-    //     <FormControl>
-    //         <FormLabel htmlFor='favNotes'>Notes</FormLabel>
-    //         {/* <Input ref={ref} id={props.id} {...props}/> */}
-    //     </FormControl>
-    // )
-    // })
-//value={formData} onChange={handleChange}
-
-
+// Create input area for the popup form (notes)
 const Form = ({ firstFieldRef, onCancel, fav, formData, setFormData, getFavListFunction }) => {
     const [finalFormData, setFinalFormData] = useState('');
 
     const handleChange = (event) => {
-
         setFormData(event.target.value);   
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setFinalFormData(formData);
-
-        //call the airtabel API
-        //set rerender the list
     }
+
+    // Store notes in Airtable and render update the displayed favorite list 
     const patchFavFunction = async (event) =>{
         event.preventDefault();
         setFinalFormData(formData);
         let type = 'PATCH';
         let requestPayload = null;
-        // console.log(fav)
         const patchFav = await airTableAPI(requestPayload, type, fav.id, formData);
         setFinalFormData(formData);
         getFavListFunction('GET');
-
-  
     };
 
+    // Create textarea to imput notes
     return (
         <form onSubmit={patchFavFunction}>
             <Stack spacing={4}>
@@ -69,11 +53,8 @@ const Form = ({ firstFieldRef, onCancel, fav, formData, setFormData, getFavListF
             </ButtonGroup>
             </Stack>            
         </form>
-
     )
 }
-
-
 
 export default Form;
  

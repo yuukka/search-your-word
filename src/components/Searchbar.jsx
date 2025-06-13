@@ -1,3 +1,5 @@
+// src/components/Searchbar.jsx
+
 import { useState } from "react";
 import { Input } from '@chakra-ui/react'
 import { IconButton } from '@chakra-ui/react'
@@ -5,15 +7,14 @@ import { SearchIcon } from '@chakra-ui/icons'
 
 
 const Searchbar = (props) => {
-    // const[wordSearch, setWordSearch] = useState('');
+
+    // Call the jotaba API with the keyword that the user submitted
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(props.wordSearch);
-        // console.log(event.target);
         props.searchWords(props.wordSearch);
-        //console.log(event.target.elements.search.value);
-        // alert("The form was submitted");
     }
+
+    // Show the Searchbox and search button
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -23,13 +24,10 @@ const Searchbar = (props) => {
                 placeholder='Search' 
                 value = {props.wordSearch}
                 onChange={(event) => props.setWordSearch(event.target.value)}
-                />
-                
+                />          
                 <IconButton type='submit' aria-label='Search database' icon={<SearchIcon />}  />
-            </form>
-            
+            </form>   
         </>
-
     );
 };
 

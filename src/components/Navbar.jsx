@@ -1,3 +1,5 @@
+// src/components/Navbar.jsx
+
 import { Link } from 'react-router';
 import { Center, Square, Circle } from '@chakra-ui/react'
 import {
@@ -6,6 +8,7 @@ import {
   BreadcrumbSeparator,
 } from '@chakra-ui/react'
 
+// Navigation Bar - Home, Favlist, Quiz
 const NavBar = () => {
     return (
         <>
@@ -25,10 +28,6 @@ const NavBar = () => {
           </Breadcrumb>
         </Center>
         </>
-
-
-
-
     );
 }
 

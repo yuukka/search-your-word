@@ -3,38 +3,23 @@ import { Stack, Radio, RadioGroup } from '@chakra-ui/react'
 
 const QuizRadio = (props) => {
 
-    // console.log(props.ansOption);
-    //  console.log(props.ansOptionsID);
-
-
     const handleChange = ({ target }) => {
         props.setChoice(target.value);
         
     };
 
-    // useEffect(() => {
-    //     console.log(ansOption);        
-    // }, [ansOption]); 
-
+    // Create answer choices in radio button, selected choices is passed to parent component as Choice state
     return (
         <>
-
-                <Radio 
-                size='lg' 
-                value={props.ansOption.id} 
-                colorScheme='orange' 
-                onChange={handleChange}
-                >
-                    {props.ansOption.fields.furigana}
-                </Radio>  
-
-
-
+            <Radio 
+            size='lg' 
+            value={props.ansOption.id} 
+            colorScheme='orange' 
+            onChange={handleChange}
+            >
+                {props.ansOption.fields.furigana}
+            </Radio>  
         </>
-
-
-
-
     );
 }
 

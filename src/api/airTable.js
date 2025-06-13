@@ -12,11 +12,7 @@ const airTableAPI = async (requestPayload, requestType, recordID, userNotes) => 
         url = `${AIRTABLE_BASE_URL}`
     }
 
-    // console.log(requestPayload);
-    // console.log(userNotes);
     let requestObj;
-    // let requestArray = [];
-    // let glossesRaw = requestPayload.senses[0].glosses;
 
     if (requestPayload !== null && requestType !== "PATCH" ) {
         requestObj = {
@@ -41,7 +37,6 @@ const airTableAPI = async (requestPayload, requestType, recordID, userNotes) => 
         requestPayload = null;
     }
 
-    // console.log(requestPayload);
     try {
         const response = await fetch(url, {
         method: requestType,
@@ -52,13 +47,13 @@ const airTableAPI = async (requestPayload, requestType, recordID, userNotes) => 
         body: requestPayload
         
         });
-        // console.log(response);
+        
         if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
         }
 
         const json = await response.json();
-        // console.log(json);
+        
         return json;
     } catch (error) {
         console.error(error.message);

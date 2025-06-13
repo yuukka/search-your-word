@@ -1,3 +1,5 @@
+// src/components/Favcard.jsx
+
 import React, { useState, useEffect } from "react";
 import { Textarea, Input, Popover, PopoverTrigger,PopoverContent,PopoverArrow, PopoverCloseButton, FormControl, FormLabel,  IconButton, Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button, Image, Text, useDisclosure, Collapse, Box } from '@chakra-ui/react'
 import { airTableAPI } from '../api/airTable'
@@ -5,12 +7,12 @@ import  FocusLock from "react-focus-lock"
 import PopoverForm from './PopoverForm'
 
 
-
 const Favcard = (props) => {
     const initialState = '';
     const [favCard, setFavCard] = useState();
     const [formData, setFormData] = useState(initialState);
 
+    // Remove the word from Favlist when user clicked on 'Remove'
     const deleteFavFunction = async () =>{
         let requestType = 'DELETE';
         let requestPayload = null;
@@ -18,29 +20,14 @@ const Favcard = (props) => {
         props.getFavListFunction();
     };
 
-
-
-    // useEffect(() => {
-    //     console.log(formData);
-    // },[formData]);
-
-    // useEffect(() => {
-    //     console.log(finalFormData);
-    // },[finalFormData]);
-
+    // Set in a FavCard usestate for each favorite word
     useEffect(() => {
         setFavCard(props.fav);
     },[props.fav]);
 
-    // useEffect(() => {
-    //     console.log(props.fav);        
-    //     console.log(favCard);
-    // },[favCard]);
-
-
+    // Show the favorite word in a card format, user are able to click and remove from the list, add notes for future reference (Notes are saved in Airtable as well)
     return (
-        <>
-            
+        <>   
             <Card maxW='sm'>
                 <CardBody>
                     <Image
