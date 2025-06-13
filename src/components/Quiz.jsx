@@ -1,36 +1,29 @@
+// src/components/Quiz.jsx
+
 import React, { useEffect, useState } from 'react'
 import QuizCard from './QuizCard'
 import { Button } from '@chakra-ui/react';
+
 const Quiz = (props) => {
+    let ansOptions = [];
+    let ansOptionsID= [];
 
-let ansOptions = [];
-let ansOptionsID= [];
-//  const filteredFavRecords = props.fullFavList?.records?.slice(0, 3) || [];
-//   const ansOptions = filteredFavRecords.map(fav => fav.fields.furigana);
-//   const ansOptionsID = filteredFavRecords.map(fav => fav.id);
-  useEffect(() => {
-    // console.log("Page loaded");
-    let requestType = 'GET';
-    const listOfFav = props.getFavListFunction(requestType);
-  }, []); 
+    // Get the full list of Favorite words by calling airtable API
+    useEffect(() => {
+        let requestType = 'GET';
+        const listOfFav = props.getFavListFunction(requestType);
+    }, []); 
 
 
-  const resetQuiz = () => {
-    window.location.reload();
-  };
+    const resetQuiz = () => {
+        window.location.reload();
+    };
 
-
-
-//   useEffect(() => {
-//     console.log(props.fullFavList?.records);
-
-         
-//   }, [props.fullFavList]); 
-    // const quiz = 3;
+    // Create the quizcard only if the user has saved 3 or more words
     return (
         <>
             <h1>Quiz</h1>   
-            {props.fullFavList?.records.length <= 1 ? 
+            {props.fullFavList?.records.length <= 2 ? 
             "You need to add at least 3 words in Favlist to play the quiz!" 
             : 
             <>
@@ -39,15 +32,10 @@ let ansOptionsID= [];
                 {props.fullFavList?.records.map((fav, i) => {
                     if (i <= 2) {
                         ansOptions.push(fav);
-                        console.log(ansOptions)
-                        // ansOptionsID.push(fav.id)
-                        // console.log(ansOptionsID)
                         return (
                         <div className='favCard' key={fav.id} >
                         <QuizCard fav={fav} Number={i+1} ansOptions={ansOptions}></QuizCard>
-                        {/* <Favcard fav={fav} getFavListFunction={props.getFavListFunction}/> */}
-                        </div>
-                        
+                        </div>                      
                     )} else {
                         return null;
                     }
@@ -59,10 +47,6 @@ let ansOptionsID= [];
             </>
             }
         </>
-
-
-
-
     );
 }
 

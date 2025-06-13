@@ -1,28 +1,22 @@
+// src/components/Favlist.jsx
+
 import React, { useState, useContext, useEffect } from "react";
 import Favcard from './Favcard'
 import { airTableAPI } from '../api/airTable'
 
+
 const Favlist = (props) => {
-    // const[wordSearch, setWordSearch] = useState('');
 
+    // Get the full Favorite list from Airtabel when the page loaded
     let requestType = 'GET';
-    // let getFavListFunction = async (type) => {
-
-    //         let requestPayload = null;
-    //         const fullAirtTableList = await airTableAPI(requestPayload, type);
-    //         console.log(fullAirtTableList);
-    //         setFullFavList(fullAirtTableList);
-    // };
-
     useEffect(() => {
         props.getFavListFunction(requestType);
     }, []); 
 
-        // console.log(props.fullFavList);
+    // Show the list of Favorite word that the user saved previously from the Wordcard (search result)
     return (
         <>
-            <h1>Favlist</h1>        
-            
+        <h1>Favlist</h1>        
         <div className="flex-container">
             {props.fullFavList?.records.map((fav) => (
                 <div className='favCard' key={fav.id} >

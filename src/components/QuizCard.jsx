@@ -5,13 +5,14 @@ import QuizRadio from './QuizRadio'
 const QuizCard = (props) => {
     const [choice, setChoice] = useState();
     const [isCorrect, setIsCorrect] = useState(null);
-    console.log(props.fav);
-    console.log(props.ansOptions);
-    // console.log(props.ansOptionsID);
+
+    // Check if the user choice and the word's id from Airtable is the same, set boolean 
     const validateAns = () => {
       setIsCorrect(choice === props.fav.id)
 
     };
+
+    // Create the quiz card, pass ansOption prop (Which includes all Quizzes in an array) to QuizRadio so that it includes correct and also wrong choices
 
     return (
         <>
@@ -34,9 +35,9 @@ const QuizCard = (props) => {
                 <Stack>
                   {props.ansOptions.map((ansOption, i) => (
                       <QuizRadio 
-                      key={ansOption.id} 
-                      ansOption={ansOption} 
-                      setChoice={setChoice} 
+                        key={ansOption.id} 
+                        ansOption={ansOption} 
+                        setChoice={setChoice} 
                       >
                       </QuizRadio>
                   ))}
@@ -44,7 +45,7 @@ const QuizCard = (props) => {
                 </Stack>
                 </RadioGroup>
               {isCorrect !== null && (
-                <Text fontWeight="bold" color={isCorrect ? "green.500" : "red.500"}>
+                <Text fontWeight="bold" color={isCorrect ? "green" : "red"}>
                   {isCorrect ? "Correct!" : "Incorrect"}
                 </Text>
               )}
